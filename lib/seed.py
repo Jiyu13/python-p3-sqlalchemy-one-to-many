@@ -24,6 +24,7 @@ if __name__ == '__main__':
         'playstation', 'playstation 2', 'playstation 3', 'playstation 4',
         'playstation 5', 'xbox', 'xbox 360', 'xbox one', 'pc']
 
+    # 1. create a game instance
     games = []
     for i in range(50):
         game = Game(
@@ -39,6 +40,7 @@ if __name__ == '__main__':
 
         games.append(game)
 
+    # 2.  use the ID from that game instance to associate it with the corresponding review.
     reviews = []
     for game in games:
         for i in range(random.randint(1,5)):
@@ -53,3 +55,6 @@ if __name__ == '__main__':
     session.bulk_save_objects(reviews)
     session.commit()
     session.close()
+
+# 3. run python seed.py
+# 4. access reviews and games tables in Python shell => python debug.py
